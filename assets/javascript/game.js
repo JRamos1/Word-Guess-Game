@@ -35,7 +35,13 @@ document.onkeyup = function(event) {
 
     rightGuess.push(userGuess);
 
+    var DocCorrectGuess = document.getElementById("rightGuesses");
+    DocCorrectGuess.innerHTML = rightGuess;
+
     blankWord[choosenWord.indexOf(userGuess)] = userGuess;
+
+    var DoctoGuessElements = document.getElementById("wordToGuess");
+    DoctoGuessElements.innerHTML = blankWord;
   } else {
     console.log(false);
 
@@ -44,6 +50,11 @@ document.onkeyup = function(event) {
     tries--;
 
     console.log(tries);
+    var DocwrongGuess = document.getElementById("wrongGuesses");
+    DocwrongGuess.innerHTML = wrongGuess;
+
+    var DocGuessesLeft = document.getElementById("Tries");
+    DocGuessesLeft.innerHTML = tries;
   }
 };
 
@@ -60,9 +71,6 @@ DoctoGuessElements.innerHTML = blankWord;
 
 var DocCorrectGuess = document.getElementById("rightGuesses");
 DocCorrectGuess.innerHTML = rightGuess;
-
-var DocwrongGuess = document.getElementById("wrongGuesses");
-DocwrongGuess.innerHTML = wrongGuess;
 
 var DocGuessesLeft = document.getElementById("Tries");
 DocGuessesLeft.innerHTML = tries;
